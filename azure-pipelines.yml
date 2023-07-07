@@ -4,12 +4,13 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
-
+    - master
+    
 pool:
   vmImage: ubuntu-latest
 
-steps:
+steps: ## a step is a linear seqeunce of operations that make up a job
+## a step can either be a task, or a script or a reference to an external template
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)'
